@@ -7,7 +7,7 @@ const Header = () => {
 			{burger ? (
 				<BurgerMenu />
 			) : (
-				<div className='container relative px-2 my-2 flex justify-between items-center'>
+				<div  className='container mx-auto relative px-2 my-2 flex justify-between items-center'>
 					<h1>Abdurahim</h1>
 					<button onClick={setBurger}>
 						<svg
