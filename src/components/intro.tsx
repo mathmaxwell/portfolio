@@ -1,45 +1,43 @@
 import obito from '../images/obito.jpeg'
+
 const Intro = () => {
 	return (
-		<div
-			className='container mx-auto px-2 my-2 intro'
-		>
-			<img
-				src={obito}
-				alt='me'
-				className='rounded-full aspect-square mx-auto'
-			/>
-			<h2 className='text-2xl'>
-				👋 salom,
-				<br /> mening ismim <span className='font-bold'>Abdurahim</span>{' '}
-			</h2>
-			<p className='my-3'>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-				praesentium exercitationem impedit deleniti corporis, debitis porro
-				facilis nihil laboriosam natus est. Ratione quae voluptatum magni
-				deleniti tempora quis dicta esse.
-			</p>
-			<address className='flex items-center justify-start gap-1 my-3'>
-				<svg
-					width='30px'
-					height='30px'
-					viewBox='0 0 24 24'
-					fill='none'
-					xmlns='http://www.w3.org/2000/svg'
-				>
-					<path
-						d='M12 2c-4.4 0-8 3.6-8 8 0 5.4 7 11.5 7.3 11.8.2.1.5.2.7.2.2 0 .5-.1.7-.2.3-.3 7.3-6.4 7.3-11.8 0-4.4-3.6-8-8-8zm0 17.7c-2.1-2-6-6.3-6-9.7 0-3.3 2.7-6 6-6s6 2.7 6 6-3.9 7.7-6 9.7zM12 6c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z'
-						fill='#0D0D0D'
-					/>
-				</svg>
-				Tashkent, Uzbekistan
-			</address>
-			<ul className='flex items-center justify-center gap-3'>
-				<li>
-					<a href='telegram'>
+		<div className='container mx-auto px-4 sm:px-6 lg:px-8 my-4 intro'>
+			<div className='flex flex-col sm:flex-row items-center sm:items-start gap-6'>
+				<img
+					src={obito}
+					alt='Абдурахим'
+					className='rounded-full w-1/2 sm:w-1/3 lg:w-1/4 aspect-square border-4 border-gray-300 shadow-lg'
+				/>
+				<div className='text-center sm:text-left'>
+					<h2 className='text-2xl sm:text-3xl lg:text-4xl font-bold my-4'>
+						👋 Привет, меня зовут <span className='font-bold'>Абдурахим</span>
+					</h2>
+					<p className='text-base sm:text-lg font-light my-4'>
+						Frontend-разработчик: Создаю функциональные и интуитивно понятные
+						веб-интерфейсы.
+					</p>
+					<p className='flex items-center justify-center sm:justify-start gap-2 my-4 text-base sm:text-lg'>
 						<svg
-							width='35px'
-							height='35px'
+							className='w-6 h-6'
+							viewBox='0 0 24 24'
+							fill='none'
+							xmlns='http://www.w3.org/2000/svg'
+						>
+							<path
+								d='M12 2c-4.4 0-8 3.6-8 8 0 5.4 7 11.5 7.3 11.8.2.1.5.2.7.2.2 0 .5-.1.7-.2.3-.3 7.3-6.4 7.3-11.8 0-4.4-3.6-8-8-8zm0 17.7c-2.1-2-6-6.3-6-9.7 0-3.3 2.7-6 6-6s6 2.7 6 6-3.9 7.7-6 9.7zM12 6c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z'
+								fill='#0D0D0D'
+							/>
+						</svg>
+						Tashkent, Uzbekistan
+					</p>
+				</div>
+			</div>
+			<ul className='flex items-center justify-center gap-4 sm:gap-6 my-4'>
+				<li>
+					<a href='telegram' aria-label='Telegram'>
+						<svg
+							className='w-8 h-8'
 							viewBox='0 0 15 15'
 							fill='none'
 							xmlns='http://www.w3.org/2000/svg'
@@ -53,11 +51,10 @@ const Intro = () => {
 					</a>
 				</li>
 				<li>
-					<a href='github'>
+					<a href='github' aria-label='GitHub'>
 						<svg
+							className='w-8 h-8'
 							fill='#000000'
-							width='35px'
-							height='35px'
 							viewBox='0 0 24 24'
 							xmlns='http://www.w3.org/2000/svg'
 							data-name='Layer 1'
@@ -67,10 +64,9 @@ const Intro = () => {
 					</a>
 				</li>
 				<li>
-					<a href='leetcode'>
+					<a href='leetcode' aria-label='LeetCode'>
 						<svg
-							width='35px'
-							height='35px'
+							className='w-8 h-8'
 							viewBox='0 0 24 24'
 							role='img'
 							xmlns='http://www.w3.org/2000/svg'
@@ -80,10 +76,9 @@ const Intro = () => {
 					</a>
 				</li>
 				<li>
-					<a href='email'>
+					<a href='email' aria-label='Email'>
 						<svg
-							width='35px'
-							height='35px'
+							className='w-8 h-8'
 							viewBox='0 0 24 24'
 							fill='none'
 							xmlns='http://www.w3.org/2000/svg'

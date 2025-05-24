@@ -1,50 +1,49 @@
-import image from '../images/image.png'
+import me from '../images/me.jpg'
+
 const AboutMe = () => {
 	return (
-		<div
-			style={{ background: 'linear-gradient(135deg, #ffecb3, #ffe082)' }}
-			className='container px-2 my-10 '
-		>
-			<h1 className='text-center font-medium text-2xl'>AboutMe</h1>
-			<img
-				src={image}
-				alt='me'
-				className='mx-auto shadow-2xl rounded-2xl my-2'
-			/>
-			<h2 className='text-start font-normal text-2xl'>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-				impedit porro sed distinctio{' '}
-			</h2>
-			<p className='text-start my-2'>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur dolore
-				labore animi explicabo unde quisquam perferendis. Officiis quasi
-				temporibus iste, ut sed vel asperiores, reprehenderit earum quod laborum
-				rerum in?
-			</p>{' '}
-			<p className='text-start my-2'>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur dolore
-				labore animi explicabo unde quisquam perferendis. Officiis quasi
-				temporibus iste, ut sed vel asperiores, reprehenderit earum quod laborum
-				rerum in?
-			</p>{' '}
-			<p className='text-start my-2'>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur dolore
-				labore animi explicabo unde quisquam perferendis. Officiis quasi
-				temporibus iste, ut sed vel asperiores, reprehenderit earum quod laborum
-				rerum in?
-			</p>{' '}
-			<p className='text-start my-2'>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur dolore
-				labore animi explicabo unde quisquam perferendis. Officiis quasi
-				temporibus iste, ut sed vel asperiores, reprehenderit earum quod laborum
-				rerum in?
-			</p>{' '}
-			<p className='text-start my-2'>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur dolore
-				labore animi explicabo unde quisquam perferendis. Officiis quasi
-				temporibus iste, ut sed vel asperiores, reprehenderit earum quod laborum
-				rerum in?
-			</p>
+		<div className=' mx-auto px-4 py-4 sm:px-6 sm:my-6 lg:px-8 lg:py-8 my-10 bg-gradient-to-br from-yellow-100 to-yellow-200'>
+			<h1 className='text-center font-bold text-3xl sm:text-4xl  lg:text-5xl  mb-6'>
+				Обо мне
+			</h1>
+			<div className='flex flex-col items-center gap-6'>
+				<img
+					src={me}
+					alt='Фотография разработчика'
+					className='w-2/3 sm:w-2/3 lg:w-1/2 rounded-2xl shadow-2xl'
+				/>
+				<div className='max-w-prose'>
+					<p className='text-base sm:text-lg lg:text-xl mb-4'>
+						Я начинающий Frontend-разработчик, увлеченный созданием качественных
+						и эффективных веб-приложений. Недавно я успешно завершил обучение в
+						специализированном учебном центре, где получил глубокие знания
+						современных технологий и практический опыт разработки.
+					</p>
+					<p className='text-base sm:text-lg lg:text-xl mb-4'>
+						Мой подход к работе основан на постоянном изучении и глубоком
+						понимании каждой новой технологии. Я не просто использую
+						инструменты, а стремлюсь разобраться в их принципах работы и
+						оптимальных сценариях применения, что позволяет мне создавать
+						по-настоящему надежные решения.
+					</p>
+					<p className='text-base sm:text-lg lg:text-xl mb-4'>
+						Я уже имею опыт работы с такими технологиями, как React, Material
+						UI, React-Declarative и PocketBase, применяя их для реализации
+						разнообразных проектов: от мини-чата и интерактивного калькулятора
+						до приложения прогноза погоды и полнофункционального списка задач с
+						бэкендом. Я также активно практикуюсь, создавая фронтенд-части для
+						проектов бэкенд-разработчиков и всегда готов быстро приступить к
+						разработке, имея готовый API.
+					</p>
+					<p className='text-base sm:text-lg lg:text-xl'>
+						Моя главная цель — постоянно развиваться и создавать продукты,
+						которые приносят реальную пользу. Я целеустремлен, скрупулезен в
+						деталях и готов усердно работать над каждой задачей, чтобы достичь
+						наилучшего результата. Уверен, мои навыки и подход к разработке
+						станут ценным вкладом в вашу команду.
+					</p>
+				</div>
+			</div>
 		</div>
 	)
 }
