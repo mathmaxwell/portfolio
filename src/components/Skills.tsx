@@ -1,7 +1,6 @@
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Paper from '@mui/material/Paper'
-import Chip from '@mui/material/Chip'
 import { useTheme, alpha } from '@mui/material/styles'
 import CodeOutlined from '@mui/icons-material/CodeOutlined'
 import StorageOutlined from '@mui/icons-material/StorageOutlined'
@@ -66,28 +65,28 @@ export default function Skills() {
 	const grad = `linear-gradient(135deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`
 
 	// Level → chip style
-	const levelStyle = (level: Level) => {
-		switch (level) {
-			case 'expert':
-				return {
-					label: t.skills.expert,
-					bgcolor: theme.palette.primary.main,
-					color: '#fff',
-				}
-			case 'advanced':
-				return {
-					label: t.skills.advanced,
-					bgcolor: alpha(theme.palette.primary.main, 0.12),
-					color: theme.palette.primary.main,
-				}
-			case 'comfortable':
-				return {
-					label: t.skills.comfortable,
-					bgcolor: alpha(theme.palette.text.secondary, 0.08),
-					color: theme.palette.text.secondary,
-				}
-		}
-	}
+	// const levelStyle = (level: Level) => {
+	// 	switch (level) {
+	// 		case 'expert':
+	// 			return {
+	// 				label: t.skills.expert,
+	// 				bgcolor: theme.palette.primary.main,
+	// 				color: '#fff',
+	// 			}
+	// 		case 'advanced':
+	// 			return {
+	// 				label: t.skills.advanced,
+	// 				bgcolor: alpha(theme.palette.primary.main, 0.12),
+	// 				color: theme.palette.primary.main,
+	// 			}
+	// 		case 'comfortable':
+	// 			return {
+	// 				label: t.skills.comfortable,
+	// 				bgcolor: alpha(theme.palette.text.secondary, 0.08),
+	// 				color: theme.palette.text.secondary,
+	// 			}
+	// 	}
+	// }
 
 	return (
 		<Box
@@ -167,7 +166,7 @@ export default function Skills() {
 							{/* Skills list */}
 							<Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
 								{group.skills.map(skill => {
-									const s = levelStyle(skill.level)
+									// const s = levelStyle(skill.level)
 									return (
 										<Box
 											key={skill.name}
@@ -181,7 +180,7 @@ export default function Skills() {
 											<Typography variant='body2' fontWeight={500}>
 												{skill.name}
 											</Typography>
-											<Chip
+											{/* <Chip
 												label={s.label}
 												size='small'
 												sx={{
@@ -192,7 +191,7 @@ export default function Skills() {
 													height: 22,
 													flexShrink: 0,
 												}}
-											/>
+											/> */}
 										</Box>
 									)
 								})}
