@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useTheme } from '@mui/material/styles'
 import { useLang } from '../contexts/LanguageContext'
 import type { Project } from '../data/projects'
@@ -5,6 +6,7 @@ import type { Language } from '../i18n/translations'
 import {
 	alpha,
 	Box,
+	Button,
 	Card,
 	CardActionArea,
 	CardContent,
@@ -12,6 +14,8 @@ import {
 	Chip,
 	Typography,
 } from '@mui/material'
+
+const DESCRIPTION_LIMIT = 120
 import {
 	CodeOutlined,
 	PhotoLibraryOutlined,
@@ -29,6 +33,9 @@ export function ProjectCard({
 }) {
 	const { t } = useLang()
 	const theme = useTheme()
+	const [expanded, setExpanded] = useState(false)
+	const description = project.description[lang]
+	const isLong = description.length > DESCRIPTION_LIMIT
 
 	return (
 		<Card
@@ -164,10 +171,31 @@ export function ProjectCard({
 					<Typography
 						variant='body2'
 						color='text.secondary'
-						sx={{ lineHeight: 1.7, mb: 2 }}
+						sx={{ lineHeight: 1.7, whiteSpace: 'pre-line' }}
 					>
-						{project.description[lang]}
+						{!expanded && isLong
+							? description.slice(0, DESCRIPTION_LIMIT) + '...'
+							: description}
 					</Typography>
+					{isLong && (
+						<Button
+							size='small'
+							onClick={e => {
+								e.stopPropagation()
+								setExpanded(p => !p)
+							}}
+							sx={{
+								mb: 1,
+								p: 0,
+								minWidth: 0,
+								textTransform: 'none',
+								fontSize: '0.75rem',
+								color: 'primary.main',
+							}}
+						>
+							{expanded ? t.projects.readLess : t.projects.readMore}
+						</Button>
+					)}
 					<Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.6 }}>
 						{project.techStack.slice(0, 4).map(tech => (
 							<Chip

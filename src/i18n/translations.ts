@@ -38,6 +38,8 @@ export const translations = {
 			seeDetails: 'See Details',
 			photo: 'photo',
 			of: 'of',
+			readMore: 'Read more',
+			readLess: 'Show less',
 		},
 		skills: {
 			title: 'My Skills',
@@ -99,6 +101,8 @@ export const translations = {
 			seeDetails: 'Подробнее',
 			photo: 'фото',
 			of: 'из',
+			readMore: 'Читать далее',
+			readLess: 'Свернуть',
 		},
 		skills: {
 			title: 'Мои навыки',
@@ -160,6 +164,8 @@ export const translations = {
 			seeDetails: 'Batafsil',
 			photo: 'rasm',
 			of: 'dan',
+			readMore: "Ko'proq o'qish",
+			readLess: "Yig'ish",
 		},
 		skills: {
 			title: "Mening ko'nikmalarim",
