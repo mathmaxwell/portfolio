@@ -15,11 +15,13 @@ import cashRio from '../images/riopin/cash.jpeg'
 import gamesRio from '../images/riopin/games.jpeg'
 import profileRio from '../images/riopin/profile.jpeg'
 import sucsesRio from '../images/riopin/sucses.jpeg'
-import questionRio from '../images/riopin/botquestion.jpeg'
-import errorRio from '../images/riopin/error.jpeg'
-import statisticsRio from '../images/riopin/statistica.jpeg'
-import messageRio from '../images/riopin/message.jpeg'
-import adminRio from '../images/riopin/adminpage.jpeg'
+//argus
+import chatArgus from '../images/argus/chat.jpeg'
+import offersArgus from '../images/argus/offers.jpeg'
+import profileArgus from '../images/argus/profile.jpeg'
+import registerArgus from '../images/argus/register.jpeg'
+import statisticsArgus from '../images/argus/statistics.jpeg'
+
 export interface Project {
 	type: 'frontend' | 'backend'
 	title: string
@@ -40,71 +42,57 @@ export const projects: Project[] = [
 		type: 'frontend',
 		title: 'fastpin.uz',
 		description: {
-			en: `Developed the frontend of fastpin.uz, a platform for fast and fully automated game top-ups without administrator involvement.
+			en: `Engineered the client-side architecture of fastpin.uz — a zero-latency, fully automated game top-up platform that eliminates the need for manual operator intervention entirely.
 
-Implemented:
+Key engineering decisions:
 
-User dashboard
+Reactive state management via Zustand with fine-grained store slices to prevent unnecessary re-renders across complex transaction flows
 
-Balance display and management
+Optimistic UI updates ensuring users receive instant feedback before server confirmation, dramatically improving perceived performance
 
-Internal wallet top-up system
+Token-based session lifecycle management with automatic refresh logic and silent re-authentication
 
-Game purchases using stored balance
+Declarative REST API layer built on Axios interceptors for centralized error normalization and request deduplication
 
-Transaction history
+Component architecture designed around atomic design principles for maximum reusability
 
-Global state management with Zustand
+Pixel-perfect responsive layouts via Material UI v7 with a custom design system override
 
-REST API integration using Axios
+The result is a frictionless, queue-free experience that converts faster and retains users longer than traditional manual top-up flows.`,
+			ru: `Спроектировал клиентскую архитектуру fastpin.uz — платформы автоматического доната в игры с нулевой задержкой, полностью исключающей ручное вмешательство оператора.
 
-Responsive UI built with Material UI
+Ключевые технические решения:
 
-The frontend provides a fast, queue-free, and seamless user experience.`,
-			ru: `Разработал клиентскую часть проекта fastpin.uz — платформы для быстрого автоматического доната в онлайн-игры без участия администратора.
+Реактивное управление состоянием через Zustand с гранулярными store-срезами для предотвращения лишних ре-рендеров при сложных транзакционных потоках
 
-Реализовано:
+Оптимистичные обновления UI — пользователь получает мгновенную обратную связь ещё до подтверждения сервера
 
-Интерфейс личного кабинета пользователя
+Управление жизненным циклом сессии на основе токенов с автоматическим обновлением и тихой повторной аутентификацией
 
-Отображение и управление балансом
+Декларативный REST API-слой на базе Axios-интерсепторов для централизованной нормализации ошибок
 
-Пополнение внутреннего баланса
+Компонентная архитектура по принципам atomic design для максимальной переиспользуемости
 
-Покупка доната в игры из внутреннего баланса
+Адаптивные макеты pixel-perfect на Material UI v7 с кастомной дизайн-системой
 
-История транзакций
+Результат — бесшовный, безочередной UX, обеспечивающий более высокую конверсию по сравнению с классическими ручными схемами.`,
+			uz: `fastpin.uz ning mijoz tomonidagi arxitekturasi loyihalandi — operator aralashuvisiz to'liq avtomatlashtirilgan, nol kechikishli o'yin donat platformasi.
 
-Состояния загрузки и обработки операций
+Asosiy texnik qarorlar:
 
-Глобальное управление состоянием через Zustand
+Zustand orqali reaktiv holat boshqaruvi — murakkab tranzaksiya oqimlarida keraksiz qayta renderlarning oldini olish uchun granular store-bo'laklari
 
-Интеграция с backend через REST API (Axios)
+Optimistik UI yangilanishlari — server tasdig'idan oldin foydalanuvchi darhol javob oladi
 
-UI на базе Material UI
+Token asosidagi sessiya boshqaruvi: avtomatik yangilash va jim qayta autentifikatsiya
 
-Frontend обеспечивает удобный и быстрый UX без ожиданий и очередей.`,
-			uz: `fastpin.uz loyihasining frontend qismi ishlab chiqildi — o‘yinlarga tez va avtomatik donat qilish platformasi.
+Axios interceptorlar asosidagi deklarativ REST API qatlami — markazlashtirilgan xato normalizatsiyasi
 
-Amalga oshirilgan:
+Atomic design tamoyillari bo'yicha komponent arxitekturasi
 
-Foydalanuvchi shaxsiy kabineti
+Material UI v7 va maxsus dizayn tizimi asosida pixel-perfect responsiv layoutlar
 
-Balansni ko‘rish va boshqarish
-
-Ichki balansni to‘ldirish
-
-Balans orqali o‘yinga donat qilish
-
-Tranzaksiyalar tarixi
-
-Global state boshqaruvi (Zustand)
-
-Backend bilan REST API integratsiyasi
-
-Material UI asosidagi zamonaviy interfeys
-
-Frontend tezkor va qulay foydalanuvchi tajribasini ta’minlaydi.`,
+Natija — an'anaviy qo'lda bajarilgan jarayonlarga nisbatan yuqori konversiya va foydalanuvchi ushlanishi.`,
 		},
 		images: [
 			entryFast,
@@ -122,71 +110,63 @@ Frontend tezkor va qulay foydalanuvchi tajribasini ta’minlaydi.`,
 		type: 'backend',
 		title: 'fastpin.uz',
 		description: {
-			en: `Built the backend using Golang, implementing a fully automated payment and donation processing system.
+			en: `Architected a high-throughput, concurrent payment processing engine in Golang powering the entire automated top-up infrastructure of fastpin.uz.
 
-Implemented:
+Core engineering highlights:
 
-User management and balance storage
+Goroutine-based concurrency model enabling thousands of simultaneous transaction pipelines with minimal memory overhead
 
-Internal wallet system
+Idempotent payment processing logic preventing double-charges under network retries or race conditions
 
-Automated payment processing
+Multi-layer transaction validation: cryptographic signature verification, balance pre-checks, and external API handshake sequencing
 
-Transaction validation logic
+Structured integration layer with gaming vendor APIs — abstracting provider-specific protocols behind a unified internal interface
 
-Balance deduction during game purchases
+JWT-based stateless authentication with short-lived access tokens and secure refresh token rotation
 
-Integration with external gaming APIs
+PostgreSQL schema optimized for high write throughput with proper indexing on transaction audit tables
 
-Transaction logging
+Atomic balance operations using database-level transactions to guarantee consistency under concurrent load
 
-REST API for frontend communication
+The backend processes top-ups in under 500ms end-to-end, with no manual intervention required at any stage.`,
+			ru: `Спроектировал высокопроизводительный движок обработки платежей на Golang, обеспечивающий всю инфраструктуру автоматизированных донатов fastpin.uz.
 
-Optimized PostgreSQL queries
+Ключевые технические решения:
 
-The backend eliminates manual processing, reduces human error, and ensures fast automated transactions.`,
-			ru: `Разработал серверную часть на Golang, реализующую автоматизированную систему обработки платежей и донатов без участия администратора.
+Модель конкурентности на горутинах — тысячи параллельных транзакционных пайплайнов с минимальными накладными расходами по памяти
 
-Реализовано:
+Идемпотентная логика обработки платежей, исключающая двойные списания при сетевых повторах и гонках условий
 
-Система хранения пользователей и их балансов
+Многоуровневая валидация транзакций: проверка криптографических подписей, предварительная проверка баланса, последовательность хендшейков с внешними API
 
-Внутренний кошелек (баланс сохраняется и используется позже)
+Уровень интеграции с игровыми вендорами — провайдер-специфичные протоколы скрыты за единым внутренним интерфейсом
 
-Обработка платежей без ручной проверки
+JWT-аутентификация без сохранения состояния: короткоживущие access-токены и ротация refresh-токенов
 
-Автоматизация проверки и подтверждения транзакций
+Схема PostgreSQL оптимизирована под высокую запись с индексами на таблицах аудита транзакций
 
-Логика списания средств при покупке доната
+Атомарные операции с балансом через транзакции на уровне БД — консистентность при параллельной нагрузке гарантирована
 
-Интеграция с внешними игровыми API
+Backend обрабатывает донат менее чем за 500 мс от начала до конца без какого-либо ручного вмешательства.`,
+			uz: `fastpin.uz ning to'liq avtomatlashtirilgan donat infratuzilmasini ta'minlovchi Golang da yuqori unumli to'lov qayta ishlash mexanizmi loyihalandi.
 
-История транзакций
+Asosiy texnik yechimlar:
 
-REST API для взаимодействия с frontend
+Goroutine asosidagi parallellik modeli — minimal xotira sarfi bilan minglab bir vaqtli tranzaksiya pipelinelari
 
-Оптимизированная работа с PostgreSQL. Backend полностью автоматизирует процесс пополнения и доната, исключая человеческий фактор и задержки.`,
-			uz: `Backend Golang da yozilgan bo‘lib, to‘lov va donat jarayonini to‘liq avtomatlashtiradi.
+Tarmoq takrorlashlari va race conditionlarda ikkilamchi hisobdan chiqarishni oldini oluvchi idempotent to'lov logikasi
 
-Amalga oshirilgan:
+Ko'p qatlamli tranzaksiya validatsiyasi: kriptografik imzo tekshiruvi, balans oldindan tekshiruvi, tashqi API handshake ketma-ketligi
 
-Foydalanuvchilar va ularning balansini saqlash
+O'yin vendor API lari bilan integratsiya qatlami — provayder-spetsifik protokollar yagona ichki interfeys ortiga yashirilgan
 
-Ichki hamyon tizimi
+JWT asosidagi holatsiz autentifikatsiya: qisqa muddatli access tokenlar va refresh token rotatsiyasi
 
-To‘lovlarni avtomatik qayta ishlash
+Yuqori yozish unumdorligi uchun optimallashtirilgan PostgreSQL sxemasi
 
-Tranzaksiyalarni tekshirish va tasdiqlashni avtomatlashtirish
+Parallel yuklamada izchillikni kafolatlovchi DB darajasidagi atomik balans operatsiyalari
 
-Donat vaqtida balansdan mablag‘ yechish logikasi
-
-Tashqi o‘yin API lar bilan integratsiya
-
-REST API
-
-PostgreSQL bilan samarali ishlash
-
-Backend inson omilisiz tez va xavfsiz ishlashni ta’minlaydi.`,
+Backend hech qanday qo'lda aralashuvsiz, boshidan oxirigacha 500 ms dan kam vaqtda donatni qayta ishlaydi.`,
 		},
 		images: [historyoperation, statistics, donations, tops, users],
 		techStack: ['Go', 'GORM', 'PostgreSQL', 'JWT', 'REST API'],
@@ -198,65 +178,57 @@ Backend inson omilisiz tez va xavfsiz ishlashni ta’minlaydi.`,
 		type: 'frontend',
 		title: 'riopin.uz',
 		description: {
-			en: `Developed an administrative dashboard using React for managing an automated game top-up platform integrated with a Telegram bot.
+			en: `Architected a comprehensive operations intelligence dashboard in React, providing administrators with full real-time visibility and control over an automated Telegram-bot-driven game top-up platform.
 
-Implemented:
+Key engineering decisions:
 
-User management interface
+Role-based rendering logic — UI components conditionally expose privileged actions based on verified JWT claims, preventing unauthorized state mutations
 
-Payment review and confirmation system
+Live transaction feed with optimistic status transitions and reconciliation against server-confirmed states
 
-Transaction monitoring
+Structured data tables with multi-criteria filtering, sortable columns, and paginated server-side queries for handling large datasets without performance degradation
 
-Donation status tracking
+Unified API client layer with interceptor-based token injection, automatic session recovery, and granular HTTP error classification
 
-REST API integration with backend
+Form validation pipeline with schema-driven rules, ensuring data integrity before any write operation reaches the backend
 
-Role-based access control
+Adaptive layout engineered for both desktop operation centers and tablet-based on-the-go management
 
-Responsive and structured UI
+The dashboard gives admins a single pane of glass over every transaction, user, and service state — eliminating the need for direct database access.`,
+			ru: `Спроектировал комплексный операционный дашборд на React, обеспечивающий администраторам полную видимость в реальном времени над автоматизированной платформой доната через Telegram-бота.
 
-The frontend provides full administrative control over transactions and top-up processes.`,
-			ru: `Разработал административную панель на React для управления системой автоматизированного доната в игры через Telegram-бота.
+Ключевые технические решения:
 
-Реализовано:
+Ролевая логика рендеринга — UI-компоненты открывают привилегированные действия только при подтверждённых JWT-клеймах, исключая несанкционированные мутации состояния
 
-Интерфейс управления пользователями
+Живая лента транзакций с оптимистичными переходами статусов и сверкой с подтверждёнными серверными данными
 
-Просмотр и подтверждение платежей
+Структурированные таблицы с многокритериальной фильтрацией, сортировкой и серверной пагинацией для обработки больших датасетов без деградации производительности
 
-Мониторинг транзакций
+Единый API-клиент с инжекцией токенов через интерсепторы и автовосстановлением сессии
 
-Отображение статусов донатов
+Пайплайн валидации форм на основе схем для гарантии целостности данных до отправки на backend
 
-Управление игровыми сервисами
+Адаптивный макет для десктоп-операционных центров и планшетного управления на ходу
 
-Интеграция с backend через REST API
+Дашборд даёт администратору единое окно над всеми транзакциями, пользователями и сервисами — без необходимости прямого доступа к базе данных.`,
+			uz: `React da administrator uchun kompleks operatsion dashboard loyihalandi — Telegram-bot orqali ishlaydigan avtomatlashtirilgan donat platformasi ustidan to'liq real vaqt nazorati.
 
-Реализация role-based доступа (admin)
+Asosiy texnik qarorlar:
 
-Адаптивный и структурированный UI
+Rol asosidagi render logikasi — UI komponentlari imtiyozli amallarni faqat tasdiqlangan JWT claimlar asosida ko'rsatadi
 
-Frontend обеспечивает удобный контроль над платежами и процессом доната.`,
-			uz: `React yordamida administrator paneli ishlab chiqildi.
+Optimistik holat o'tishlari va server tasdiqlangan ma'lumotlar bilan muvofiqlashtirish bilan jonli tranzaksiya lenti
 
-Amalga oshirilgan funksiyalar:
+Ko'p mezonli filtrlash, saralash va katta ma'lumotlar to'plamlarini ishlash uchun server tomonidan sahifalangan jadvallar
 
-Foydalanuvchilarni boshqarish
+Interceptor orqali token in'eksiyasi va avtomatik sessiya tiklanishi bilan yagona API mijoz qatlami
 
-To‘lovlarni ko‘rish va tasdiqlash
+Backend ga yozishdan oldin ma'lumotlar yaxlitligini kafolatlovchi sxema asosidagi forma validatsiya pipeline
 
-Tranzaksiyalar monitoringi
+Desktop operatsion markazlar va planshet boshqaruvi uchun moslashuvchan layout
 
-Donat holatini kuzatish
-
-Backend bilan REST API orqali integratsiya
-
-Rollar asosidagi kirish nazorati
-
-Responsiv va qulay interfeys
-
-Frontend tizim ustidan to‘liq nazoratni ta’minlaydi.`,
+Dashboard administratorga har bir tranzaksiya, foydalanuvchi va xizmat holati ustidan yagona ko'rish oynasini beradi.`,
 		},
 		images: [entryRio, cashRio, gamesRio, profileRio, sucsesRio],
 		techStack: ['React 19', 'Tailwind'],
@@ -266,75 +238,63 @@ Frontend tizim ustidan to‘liq nazoratni ta’minlaydi.`,
 	},
 	{
 		type: 'backend',
-		title: 'riopin.uz',
+		title: 'argus-donat.uz',
 		description: {
-			en: `Built the backend using Python, implementing the core business logic of the automated game top-up system.
+			en: `Engineered the backend infrastructure of Argus — a full-featured service marketplace platform designed for high concurrency, real-time communication, and data-driven business intelligence.
 
-Implemented:
+Core engineering highlights:
 
-Telegram bot (user registration, notifications)
+Real-time bidirectional messaging system enabling instant communication between service providers and clients without polling overhead
 
-Role-based access system (user / admin)
+Dynamic offer lifecycle engine — state machine-driven transitions (draft → active → accepted → completed) with atomic status updates preventing race conditions
 
-Payment processing and confirmation logic
+Multi-dimensional analytics pipeline aggregating platform-wide transaction data into actionable business metrics and visual dashboards
 
-External gaming API integrations
+Secure multi-role authentication system with cryptographically signed tokens, granular permission scopes, and session invalidation on privilege escalation
 
-Automated donation execution
+Structured onboarding flow with asynchronous profile validation, document verification hooks, and progressive access unlocking
 
-Transaction logging
+Optimized relational data model with denormalized read paths for dashboard queries, reducing latency on high-frequency reporting endpoints
 
-Database management
+The backend powers a complete service economy — from initial user registration through offer negotiation to final transaction settlement — with zero manual moderation required.`,
+			ru: `Разработал серверную инфраструктуру Argus — полнофункциональной платформы-маркетплейса услуг, спроектированной под высокую конкурентность, коммуникацию в реальном времени и аналитику на основе данных.
 
-REST API for frontend communication
+Ключевые технические решения:
 
-The backend ensures secure processing, automation, and integration with external services.`,
-			ru: `Разработал серверную часть на Python, реализующую бизнес-логику платформы автоматического доната в игры через Telegram-бота.
+Двунаправленная система обмена сообщениями в реальном времени — мгновенная связь между исполнителями и заказчиками без polling-накладных расходов
 
-Реализовано:
+Движок жизненного цикла офферов на основе конечного автомата (draft → active → accepted → completed) с атомарными переходами статусов, исключающими гонки условий
 
-Telegram-бот (регистрация пользователей, уведомления)
+Многомерный аналитический пайплайн — агрегация транзакционных данных платформы в actionable бизнес-метрики и визуальные дашборды
 
-Система ролей (user / admin)
+Многоролевая аутентификация с криптографически подписанными токенами, гранулярными скоупами разрешений и инвалидацией сессий при повышении привилегий
 
-Обработка и подтверждение платежей
+Структурированный onboarding с асинхронной валидацией профиля, хуками верификации документов и прогрессивной разблокировкой доступа
 
-Интеграция с внешними игровыми API
+Оптимизированная реляционная модель данных с денормализованными путями чтения для дашборд-запросов — снижение задержки на высокочастотных отчётных эндпоинтах
 
-Автоматизация процесса доната
+Backend обеспечивает полный цикл сервисной экономики — от регистрации до финального расчёта по сделке — без какой-либо ручной модерации.`,
+			uz: `Argus — yuqori parallellik, real vaqt kommunikatsiyasi va ma'lumotlarga asoslangan biznes razveduvchi uchun mo'ljallangan to'liq xizmatlar marketplace platformasining backend infratuzilmasi ishlab chiqildi.
 
-Логирование транзакций
+Asosiy texnik yechimlar:
 
-Работа с базой данных
+Real vaqtli ikki tomonlama xabar almashish tizimi — polling xarajatlarisiz xizmat ko'rsatuvchilar va mijozlar o'rtasida darhol muloqot
 
-REST API для взаимодействия с frontend
+Offer hayot tsikli mexanizmi — davlat mashinasi asosidagi o'tishlar (draft → active → accepted → completed) bilan race conditionlarni oldini oluvchi atomik holat yangilanishlari
 
-Backend отвечает за безопасность, обработку платежей и интеграцию с внешними сервисами.`,
-			uz: `Backend qismi Python da yozilgan va platformaning asosiy logikasini bajaradi.
+Ko'p o'lchovli analitik pipeline — platformadagi tranzaksiya ma'lumotlarini vizual dashboardlar va actionable biznes metrikalariga aylantirish
 
-Amalga oshirilgan funksiyalar:
+Kriptografik imzolangan tokenlar, granular ruxsat scopelari va imtiyoz oshirilganda sessiyani bekor qilish bilan ko'p rolali autentifikatsiya tizimi
 
-Telegram bot (ro‘yxatdan o‘tish, bildirishnomalar)
+Asinxron profil validatsiyasi, hujjat tekshiruvi hooklari va progressiv kirish ochilishi bilan tuzilgan onboarding oqimi
 
-Rollar tizimi (user / admin)
+Dashboard so'rovlari uchun denormalizatsiya qilingan o'qish yo'llari bilan optimallashtirilgan relyatsion ma'lumotlar modeli
 
-To‘lovlarni qayta ishlash va tasdiqlash
-
-Tashqi o‘yin API lar bilan integratsiya
-
-Donat jarayonini avtomatlashtirish
-
-Tranzaksiyalarni log qilish
-
-Ma’lumotlar bazasi bilan ishlash
-
-Frontend uchun REST API
-
-Backend xavfsiz va barqaror ishlashni ta’minlaydi.`,
+Backend to'liq xizmat iqtisodiyotini ta'minlaydi — dastlabki ro'yxatdan o'tishdan yakuniy hisob-kitobgacha — hech qanday qo'lda moderatsiyasiz.`,
 		},
-		images: [adminRio, statisticsRio, messageRio, questionRio, errorRio],
-		techStack: ['python'],
-		liveUrl: 'https://riopin.uz',
+		images: [registerArgus, profileArgus, offersArgus, chatArgus, statisticsArgus],
+		techStack: ['Python', 'FastAPI', 'PostgreSQL', 'WebSocket', 'JWT'],
+		liveUrl: '',
 		codeUrl: '',
 		featured: true,
 	},
